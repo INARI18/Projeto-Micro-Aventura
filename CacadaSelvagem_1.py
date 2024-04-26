@@ -10,34 +10,34 @@ DAQ ZBGHD-VO LAN YBJFUK
 VM 5 VFFTVLG
 """
 
-letraFinal = "" 
-j = 0 #indice que percorre a senha TOPAZIO
+LETRA_FINAL = "" 
+j = 0 #indice que percorre a SENHA TOPAZIO
 
-print("Qual a senha?")
-senha = "Topazio" #str(input()) #recebe a senha
-print("Digite cada linha da letraFinal secreta.")
+print("Qual a SENHA?")
+SENHA = "Topazio" #str(input()) #recebe a SENHA
+print("Digite cada linha da LETRA_FINAL secreta.")
 print("Quando terminar, digite FIM.")
 print() 
 
-mensagemCripto = "INICIO"
+MENSAGEM_CRIPTO = "INICIO"
 
-while(mensagemCripto != "FIM" and mensagemCripto != "fim"):
-	mensagemCripto = str(input())
-	if mensagemCripto == "FIM" or mensagemCripto == "fim":
+while(MENSAGEM_CRIPTO != "FIM" and MENSAGEM_CRIPTO != "fim"):
+	MENSAGEM_CRIPTO = str(input())
+	if MENSAGEM_CRIPTO == "FIM" or MENSAGEM_CRIPTO == "fim":
 		print("Execucao terminada!")
 		exit()
-	for i in range(0,len(mensagemCripto)):
-		letra_Codigo = mensagemCripto[i]
-		if (letra_Codigo < 'A' or letra_Codigo > 'Z'):
-			letraFinal = letraFinal + letra_Codigo
-		j = j + 1 #avança para o proximo indice da senha
-		if j > len(senha) -1: #reinicia o indice da senha
+	for i in range(0,len(MENSAGEM_CRIPTO)):
+		LETRA_CODIGO = MENSAGEM_CRIPTO[i]
+		if (LETRA_CODIGO < 'A' or LETRA_CODIGO > 'Z'):
+			LETRA_FINAL = LETRA_FINAL + LETRA_CODIGO
+		j = j + 1 #avança para o proximo indice da SENHA
+		if j > len(SENHA) - 1: #reinicia o indice da SENHA
 			j = 0
-		ascii_Senha = ord(senha[j]) - ord('A')+1
-		ascii_Codigo = ord(letra_Codigo) - ord('A')+1
-		#print(ascii_Senha,ascii_Codigo)
-		if ascii_Senha <= ascii_Codigo:
-			ascii_Senha = ascii_Senha + 26
-		ascii_letraFinal = ascii_Senha - ascii_Codigo
-		letraFinal = letraFinal + chr(ascii_letraFinal + ord('A') -1)
-	print(letraFinal)
+		ASCII_SENHA = ord(SENHA[j]) - ord('A')+1
+		ASCII_CODIGO = ord(LETRA_CODIGO) - ord('A') + 1
+		#print(ASCII_SENHA,ASCII_CODIGO)
+		if ASCII_SENHA <= ASCII_CODIGO:
+			ASCII_SENHA = ASCII_SENHA + 26
+		ASCII_LETRA_FINAL = ASCII_SENHA - ASCII_CODIGO
+		LETRA_FINAL = LETRA_FINAL + chr(ASCII_LETRA_FINAL + ord('A') - 1)
+	print(LETRA_FINAL)
