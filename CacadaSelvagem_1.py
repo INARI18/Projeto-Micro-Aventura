@@ -21,7 +21,7 @@ print()
 
 MENSAGEM_CRIPTO = "INICIO"
 
-while(MENSAGEM_CRIPTO not in "FIM" or MENSAGEM_CRIPTO not in "fim"):
+while MENSAGEM_CRIPTO.upper() != "FIM":
 	MENSAGEM_CRIPTO = str(input())
 	if MENSAGEM_CRIPTO == "FIM" or MENSAGEM_CRIPTO == "fim":
 		print("Execucao terminada!")
