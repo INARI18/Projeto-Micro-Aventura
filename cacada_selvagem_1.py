@@ -21,14 +21,16 @@ print()
 
 MENSAGEM_CRIPTO = "INICIO"
 
-while MENSAGEM_CRIPTO.upper() != "FIM":
-	MENSAGEM_CRIPTO = str(input())
-	if MENSAGEM_CRIPTO == "FIM" or MENSAGEM_CRIPTO == "fim":
+while MENSAGEM_CRIPTO != "FIM":
+	
+	MENSAGEM_CRIPTO = str(input().upper())
+	if MENSAGEM_CRIPTO == "FIM":
 		print("Execucao terminada!")
 		exit()
+
 	for i in range(0,len(MENSAGEM_CRIPTO)):
 		LETRA_CODIGO = MENSAGEM_CRIPTO[i]
-		if (LETRA_CODIGO < 'A' or LETRA_CODIGO > 'Z'):
+		if (ord(LETRA_CODIGO) < ord('A') or ord(LETRA_CODIGO) > ord('Z')):
 			LETRA_FINAL = LETRA_FINAL + LETRA_CODIGO
 		j = j + 1 #avança para o proximo indice da SENHA
 		if j > len(SENHA) - 1: #reinicia o indice da SENHA
