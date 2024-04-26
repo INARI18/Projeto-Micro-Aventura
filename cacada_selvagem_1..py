@@ -1,4 +1,4 @@
-# Cifra de Vigenère
+#Cifra_de_Vigenère
 
 """
 AFVFYFNE KO NQPVSZ MIQOFQN
@@ -10,14 +10,14 @@ DAQ ZBGHD-VO LAN YBJFUK
 VM 5 VFFTVLG
 """
 
-LETRA_FINAL = "" 
+LETRA_FINAL = ""
 j = 0 #indice que percorre a SENHA TOPAZIO
 
 print("Qual a SENHA?")
 SENHA = "Topazio" #str(input()) #recebe a SENHA
 print("Digite cada linha da LETRA_FINAL secreta.")
 print("Quando terminar, digite FIM.")
-print() 
+print()
 
 MENSAGEM_CRIPTO = "INICIO"
 
