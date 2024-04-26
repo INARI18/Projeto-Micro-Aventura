@@ -11,7 +11,7 @@ VM 5 VFFTVLG
 """
 
 LETRA_FINAL = ""
-j = 0 #indice que percorre a SENHA TOPAZIO
+j = -1 #indice que percorre a SENHA TOPAZIO
 
 print("Qual a SENHA?")
 SENHA = "Topazio" #str(input()) #recebe a SENHA
@@ -30,7 +30,7 @@ while MENSAGEM_CRIPTO != "FIM":
 
 	for i in range(0,len(MENSAGEM_CRIPTO)):
 		LETRA_CODIGO = MENSAGEM_CRIPTO[i]
-		if (ord(LETRA_CODIGO) < ord('A') or ord(LETRA_CODIGO) > ord('Z')):
+		if (LETRA_CODIGO < 'A' or LETRA_CODIGO > 'Z'):
 			LETRA_FINAL = LETRA_FINAL + LETRA_CODIGO
 		j = j + 1 #avança para o proximo indice da SENHA
 		if j > len(SENHA) - 1: #reinicia o indice da SENHA
