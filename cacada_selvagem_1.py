@@ -35,7 +35,7 @@ while MENSAGEM_CRIPTO != "FIM":
 		j = j + 1 #avança para o proximo indice da SENHA
 		if j > len(SENHA) - 1: #reinicia o indice da SENHA
 			j = 0
-		ASCII_SENHA = ord(SENHA[j]) - ord('A')+1
+		ASCII_SENHA = ord(SENHA[j]) - ord('A') + 1
 		ASCII_CODIGO = ord(LETRA_CODIGO) - ord('A') + 1
 		#print(ASCII_SENHA,ASCII_CODIGO)
 		if ASCII_SENHA <= ASCII_CODIGO:
