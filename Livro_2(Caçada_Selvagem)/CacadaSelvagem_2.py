@@ -12,7 +12,6 @@ import math
 
 VALOR_ELEMENTOS = [0.0]*9
 NIVEL_ELEMENTOS = 0
-N = ""
 FORCA_DEVORIM = 0
 print()
 
