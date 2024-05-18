@@ -1,1 +1,0 @@
-N = VALOR_ELEMENTOS[i]
