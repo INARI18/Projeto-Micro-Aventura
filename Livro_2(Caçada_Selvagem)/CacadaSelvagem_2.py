@@ -38,10 +38,10 @@ if (RESPOSTA == "SIM" or RESPOSTA == "S"):
     if FORCA_DEVORIM < 15:
         print("Voce esta seguro... Por enquanto")
         print("Forca Devorim em nivel:", round(FORCA_DEVORIM,3))
-    if (FORCA_DEVORIM > 15 and FORCA_DEVORIM < 23):
+    elif (FORCA_DEVORIM > 15 and FORCA_DEVORIM < 23):
         print("Voce esta em grave perigo!")
         print("Forca Devorim em nivel:", round(FORCA_DEVORIM,3))
-    if FORCA_DEVORIM >= 23:
+    elif FORCA_DEVORIM >= 23:
         print("Voce esta prestes a morrer!")
         print("Forca Devorim em nivel:", round(FORCA_DEVORIM,3))
 else:
