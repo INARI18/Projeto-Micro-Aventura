@@ -11,7 +11,6 @@ piscadas = 9
 
 for i in range(piscadas):
     stdscr.clear()
-    stdscr.refresh() 
 
     for j in range(10):
         # OLHO FECHADO
