@@ -14,7 +14,7 @@ for i in range(piscadas):
 
     for j in range(10):
         # OLHO FECHADO
-        if i%2 == 1:
+        if i%2 == 0:
             stdscr.addstr(0, 1, CONTORNO_OLHO * 2)            # 12 (*)
             stdscr.addstr(1, 0, CONTORNO_OLHO * 2 + "*" * 2)  # 14 (*)
             stdscr.addstr(2, 0, CONTORNO_OLHO * 2 + "*" * 2)  # 14 (*)
