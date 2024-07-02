@@ -1,4 +1,5 @@
 #O Olho Do Idolo
+#123
 
 import curses
 from time import sleep
