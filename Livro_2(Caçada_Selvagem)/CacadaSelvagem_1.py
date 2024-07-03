@@ -12,36 +12,36 @@ VM 5 VFFTVLG
 
 #senha: TOPAZIO
 
-print("Qual a SENHA?")
-SENHA = str(input().upper())
+print("Qual a senha?")
+senha = str(input().upper())
 print("Digite cada linha da mensagem secreta.")
 print("Quando terminar, digite FIM.")
 print()
 
-MENSAGEM_CRIPTO = ""
-MENSAGEM_FINAL = ""
+mensagem_cripto = ""
+mensagem_final = ""
 j = 0
 
-while MENSAGEM_CRIPTO != "FIM":
+while mensagem_cripto != "FIM":
 	
-	MENSAGEM_CRIPTO = str(input().upper())
-	if MENSAGEM_CRIPTO == "FIM":
+	mensagem_cripto = str(input().upper())
+	if mensagem_cripto == "FIM":
 		print("Execucao terminada!")
 		break
-	MENSAGEM_FINAL = ""
-	for i in range(0,len(MENSAGEM_CRIPTO)):
-		LETRA_CRIPTO = MENSAGEM_CRIPTO[i]
-		if (LETRA_CRIPTO < 'A' or LETRA_CRIPTO > 'Z'):
-			MENSAGEM_FINAL = MENSAGEM_FINAL + LETRA_CRIPTO
+	mensagem_final = ""
+	for i in range(0,len(mensagem_cripto)):
+		letra_cripto = mensagem_cripto[i]
+		if (letra_cripto < 'A' or letra_cripto > 'Z'):
+			mensagem_final = mensagem_final + letra_cripto
 		else:
-			if j > len(SENHA) - 1:
+			if j > len(senha) - 1:
 				j = 0
-			ASCII_SENHA = ord(SENHA[j]) - ord('A') + 1
-			ASCII_CRIPTO = ord(LETRA_CRIPTO) - ord('A') + 1
-			if ASCII_SENHA <= ASCII_CRIPTO:
-				ASCII_SENHA = ASCII_SENHA + 26
-			ASCII_LETRA_FINAL = ASCII_SENHA - ASCII_CRIPTO
-			MENSAGEM_FINAL = MENSAGEM_FINAL + chr(ASCII_LETRA_FINAL + ord('A') - 1)
+			ascii_senha = ord(senha[j]) - ord('A') + 1
+			ascii_cripto = ord(letra_cripto) - ord('A') + 1
+			if ascii_senha <= ascii_cripto:
+				ascii_senha = ascii_senha + 26
+			ascii_letra_final = ascii_senha - ascii_cripto
+			mensagem_final = mensagem_final + chr(ascii_letra_final + ord('A') - 1)
 			j = j + 1
-	print(MENSAGEM_FINAL)
+	print(mensagem_final)
 	print()
