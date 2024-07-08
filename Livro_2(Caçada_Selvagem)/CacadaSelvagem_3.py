@@ -1,13 +1,13 @@
 #Olho do Idolo
 
-def CriaTela(linhas, colunas):
+def CriaTela(tamanho):
 
     matriz = []
 
-    for i in range (linhas):
+    for i in range (tamanho):
         linha = []
         
-        for j in range (colunas):
+        for j in range (tamanho):
             linha.append("  ")
 
         matriz.append(linha)
@@ -16,28 +16,28 @@ def CriaTela(linhas, colunas):
 
 def Circulo(diametro, matriz, caractere):
 
-    ii = 0
+    contador = 0
 
-    for i in matriz:
+    for linha in matriz:
 
-        for j in range (25):
+        for coluna in range (25):
             
-            x = ii - 13 + 1
-            y = j - 13 + 1
+            coordenada_x = contador - 13 + 1
+            coordenada_y = coluna - 13 + 1
 
-            if (x**2 + y**2)**0.5 <= diametro/2:
+            if (coordenada_x**2 + coordenada_y**2)**0.5 <= diametro/2:
 
-                i[j] = caractere
+                linha[coluna] = caractere
 
-        ii += 1
+        contador += 1
     
     return matriz
 
-matriz = CriaTela(25, 25)
+matriz = CriaTela(25)
 
-matriz = Circulo(15, matriz, "@ ")
-matriz = Circulo(13, matriz, "  ")
-matriz = Circulo(7, matriz, "# ")
+matriz = Circulo(25, matriz, "# ")
+matriz = Circulo(19, matriz, ". ")
+matriz = Circulo(11, matriz, "0 ")
 
 print()
 
