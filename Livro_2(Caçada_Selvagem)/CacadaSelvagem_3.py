@@ -1,50 +1,73 @@
-#Olho do Idolo
+from time import sleep
 
-def CriaTela(linhas, colunas):
+def Aberto():
 
-    matriz = []
+    print(". . @ @ @ @ . . ")
+    print(". @ . . . . @ . ")
+    print("@ . . 0 0 . . @ ")
+    print("@ . 0 O O 0 . @ ")
+    print("@ . 0 O O 0 . @ ")
+    print("@ . . 0 0 . . @ ")
+    print(". @ . . . . @ . ")
+    print(". . @ @ @ @ . . ")
 
-    for i in range (linhas):
-        linha = []
-        
-        for j in range (colunas):
-            linha.append("  ")
+"""
+def Fechado1():
 
-        matriz.append(linha)
-    
-    return matriz
+    print(". . . . . . . . ")
+    print(". @ @ @ @ @ @ . ")
+    print("@ @ . . . . @ @ ")
+    print("@ . . 0 0 . . @ ")
+    print("@ . 0 O O 0 . @ ")
+    print("@ . 0 O O 0 . @ ")
+    print(". @ . 0 0 . @ . ")
+    print(". . @ @ @ @ . . ")
+"""
+def Entreaberto():
 
-def Circulo(diametro, matriz, caractere):
+    print(". . . . . . . . ")
+    print(". . . . . . . . ")
+    print(". . . . . . . . ")
+    print(". @ @ @ @ @ @ . ")
+    print("@ . 0 O O 0 . @ ")
+    print("@ . 0 O O 0 . @ ")
+    print(". @ . 0 0 . @ . ")
+    print(". . @ @ @ @ . . ")
 
-    ii = 0
+def Fechado():
 
-    for i in matriz:
+    print(". . . . . . . . ")
+    print(". . . . . . . . ")
+    print(". . . . . . . . ")
+    print(". . @ @ @ @ . . ")
+    print("@ @ @ @ @ @ @ @ ")
+    print("@ @ @ @ @ @ @ @ ")
+    print(". @ @ @ @ @ @ . ")
+    print(". . @ @ @ @ . . ")
 
-        for j in range (25):
-            
-            x = ii - 13 + 1
-            y = j - 13 + 1
+while 1:
 
-            if (x**2 + y**2)**0.5 <= diametro/2:
+    print("\n" * 60)
+    Aberto()
+    sleep(1)
+    """
+    print("\n" * 60)
+    Fechado1()
+    sleep(0.05)
+    """
+    print("\n" * 60)
+    Entreaberto()
+    sleep(0.05)
 
-                i[j] = caractere
+    print("\n" * 60)
+    Fechado()
+    sleep(0.2)
 
-        ii += 1
-    
-    return matriz
-
-matriz = CriaTela(25, 25)
-
-matriz = Circulo(15, matriz, "@ ")
-matriz = Circulo(13, matriz, "  ")
-matriz = Circulo(7, matriz, "# ")
-
-print()
-
-for i in matriz:
-
-    for j in range (25):
-
-        print(i[j], end='')
-
-    print()
+    print("\n" * 60)
+    Entreaberto()
+    sleep(0.05)
+    """
+    print("\n" * 60)
+    Fechado1()
+    sleep(0.05)
+    """
