@@ -6,24 +6,31 @@ PASSAGEM 4: 24 33 14 27 4 17 22 17 8
 """
 
 direcoes = [0]*4
-caminho = [0]*4
 cardiais = ["N", "S", "L", "O"]
 numeros_usuario = [0]*9
 
-print("Qual caminho? (1 a 4)")
-resposta = int(input())
 
-print("Digite uma sequencia de 9 numeros (um de cada vez): ")
+print("Qual passagem? (1 a 4)")
+passagem = int(input())
+
+print("Digite a sequencia de 9 numeros (um de cada vez): ")
 for i in range (9):
     print(f"{i+1}: ", end='')
-    resposta1 = int(input())
-    numeros_usuario[i] = resposta1
+    resposta = int(input())
+    numeros_usuario[i] = resposta
 
 print()
+print(f"Passagem {passagem}: ")
 
 for i in numeros_usuario:
-    calculo_direcao = int(i/4)
-    num = (i - calculo_direcao*4)
-    direcoes[num]+= calculo_direcao
-    print(f"{calculo_direcao} -> {cardiais[num]}, ", end='')
+    calculo_direcao = int(i / 4)
+    cardial = (i - calculo_direcao * 4)
+    direcoes[cardial] += calculo_direcao
+    print(f"{calculo_direcao} -> {cardiais[cardial]}")
 
+print("\n----------------------\n")
+
+if (direcoes[0] == direcoes[1] and direcoes[2] == direcoes[3]):
+    print(f"A passagem {passagem} leva ao segredo do Idolo")
+else:
+    print(f"A passagem {passagem} leva a MORTE!")
