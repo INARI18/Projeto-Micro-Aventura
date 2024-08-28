@@ -3,7 +3,7 @@
 #distancia da base: 4.5
 
 from random import randint
-from math import atan, pi
+from math import atan, degrees
 
 print("Reflexao do Feixe")
 print("-----------------")
@@ -14,26 +14,34 @@ altura_coracao = float(input())
 print("Qual a sua distancia da base do Idolo?")
 distancia_base = float(input())
 
-W = randint(2, 5)
+margem_erro = randint(2, 4)
 
 while 1:
 
     print("Angulo de ajuste do espelho (em graus): ")
     angulo_espelho = int(input())
 
-    A = atan(altura_coracao / distancia_base)
-    B = atan(altura_olho / distancia_base)
-    B2 = (B - A) / 2
-    C = (pi / 2) - B2
-    D = pi - B - C
-    D = D * (180 / pi)
+    angulo_maior = atan(altura_coracao / distancia_base)
+    angulo_menor = atan(altura_olho / distancia_base)
+    angulo_menor = degrees(angulo_menor)
+    angulo_maior = degrees(angulo_maior)
 
-    if abs(D - angulo_espelho) > W:
+    angulo_diferenca = angulo_maior - angulo_menor
+    angulo_reflexao = angulo_menor + angulo_diferenca / 2
 
-        print("O Idolo foi destruido!")
+    diferenca = angulo_reflexao - angulo_espelho
+
+    if abs(diferenca) <= margem_erro:
+
+        print("\nO Idolo foi destruido!")
         break
 
-    else:
+    elif diferenca > 0:
 
-        print(f"Voce errou por {int(abs(D - 7))} graus")
-        print("\nSe voce ainda esta vivo, tente de novo!\n")
+        print("\nMuito baixo! Voce errou o alvo!")
+
+    elif diferenca < 0:
+
+        print("\nMuito alto! Voce errou o alvo!")
+
+    print("Se voce ainda esta vivo, tente de novo!\n")
